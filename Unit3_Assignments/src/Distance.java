@@ -1,4 +1,4 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//ï¿½ A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class -
@@ -16,8 +16,6 @@ public class Distance
 	public Distance()
 	{
 
-
-
 	}
 
 	public Distance(int x1, int y1, int x2, int y2)
@@ -29,20 +27,21 @@ public class Distance
 
 	public void setCoordinates(int x1, int y1, int x2, int y2)
 	{
-
-
-
+		xOne = x1;
+		yOne = y1;
+		xTwo = x2;
+		yTwo = y2;
 	}
 
 	public void calcDistance()
 	{
-
-
+		distance = sqrt(pow((double)yTwo - yOne,2)+ pow((double)xTwo - xOne,2));
 
 	}
 
 	public void print( )
 	{
+		System.out.println("Distance :: " + String.format("%.3f", distance));
 
 
 
