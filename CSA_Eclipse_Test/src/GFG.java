@@ -1,4 +1,15 @@
-import java.io.*; 
+public class GFG{
+	
+	public static void main (String [] args) {
+		char test = 'a';
+		int result;
+		result = test + 2;
+		System.out.println(result);
+}
+}
+
+
+/*import java.io.*; 
  
 class GFG {
  
@@ -39,4 +50,4 @@ class GFG {
         int n = 17;
         System.out.println(divSum(n));
     }
-}
+}*/
