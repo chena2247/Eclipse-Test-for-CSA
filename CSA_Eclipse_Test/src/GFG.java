@@ -1,11 +1,10 @@
 public class GFG{
 	
 	public static void main (String [] args) {
-		char test = 'a';
-		int result;
-		result = test + 2;
-		System.out.println(result);
-}
+		String two = "01234567890";
+		System.out.print( two.indexOf("24"));		// LINE 16
+	
+	}
 }
 
 
