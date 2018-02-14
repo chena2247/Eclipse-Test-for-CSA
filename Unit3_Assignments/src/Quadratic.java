@@ -11,8 +11,8 @@ import static java.lang.Math.*;
 public class Quadratic
 {
 	private int a, b, c;
-	private double rootOne;
-	private double rootTwo;
+	private double rootOne, rootTwo;
+//	private double rootTwo;
 
 	public Quadratic()
 	{
