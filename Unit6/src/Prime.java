@@ -1,4 +1,4 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//ï¿½ A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class -
@@ -13,44 +13,36 @@ public class Prime
 
 	public Prime()
 	{
-
-
 	}
 
 	public Prime(int num)
 	{
-
-
+		number = num;
 	}
 
 	public void setPrime(int num)
 	{
-
-
+		number = num;
 	}
 
 	public boolean isPrime()
 	{
-
-
-
-
-
-
-
+		for (double i = 2; i <= Math.sqrt(number); i++) {
+			if ((number/i) % 1 == 0)
+				return false;
+		}
 		return true;
 	}
 
 	public String toString()
 	{
-		String output="";
-
-
-
-
-
-
-
+		String output = "";
+		if (isPrime() == true) {
+			 output = number + " is a prime number.\n";
+			}
+		else if (isPrime() == false) {
+			 output = number + " is not a prime number.\n";
+			}
 		return output;
 	}
 }

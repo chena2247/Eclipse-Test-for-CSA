@@ -1,4 +1,4 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//ï¿½ A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class -
@@ -12,39 +12,38 @@ public class LoopStats
 
 	public LoopStats()
 	{
-
-
 	}
 
 	public LoopStats(int beg, int end)
 	{
-
-
+		start = beg;
+		stop = end;
 	}
 
 	public void setNums(int beg, int end)
 	{
-
-
+		start = beg;
+		stop = end;
 	}
 
 	public int getEvenCount()
 	{
 		int evenCount=0;
-
-
-
-
+		for (int i = start; i <= stop; i++) {
+			if (i % 2 == 0)
+				evenCount = evenCount + 1;
+		}
 		return evenCount;
+		
 	}
 
 	public int getOddCount()
 	{
 		int oddCount=0;
-
-
-
-
+		for (int i = start; i <= stop; i++) {
+			if (i % 2 == 1)
+				oddCount = oddCount + 1;
+		}
 
 		return oddCount;
 	}
@@ -52,15 +51,16 @@ public class LoopStats
 	public int getTotal()
 	{
 		int total=0;
-
-
-
-
+		for (int i = start; i <= stop; i++) {
+			total = total + i;
+		}
 		return total;
 	}
 	
 	public String toString()
 	{
-		return start + " " + stop;
+		return start + " " + stop + "\nTotal: " + getTotal() + "\nOdd Count: " 
+		+ getOddCount() + "\nEven Count: " + getEvenCount() + "\n";
+		
 	}
 }

@@ -1,4 +1,4 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//ï¿½ A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class -
@@ -10,12 +10,20 @@ public class Lab08g
 {
 	public static void main ( String[] args )
 	{
-		//add test cases
+		LoopStats test = new LoopStats(1, 5);
+		test.getEvenCount();
+		test.getOddCount();
+		out.println(test);
 		
+		test.setNums(2, 8);
+		test.getEvenCount();
+		test.getOddCount();
+		out.println(test);
 		
+		test.setNums(5, 15);
+		test.getEvenCount();
+		test.getOddCount();
+		out.println(test);
 		
-		
-		
-					
 	}
 }

@@ -1,4 +1,4 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//ï¿½ A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class -
@@ -10,9 +10,9 @@ public class Lab09f
 {
 	public static void main( String args[] )
 	{
-		//add test cases
-		
-		
-											
+		LetterRemover test = new LetterRemover("I am Sam I am", 'a');
+		test.removeLetters();
+		//System.out.println(test);
+		out.println("hi");
 	}
 }
