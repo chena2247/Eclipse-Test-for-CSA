@@ -11,7 +11,7 @@ public class Lab08i
 {
 	public static void main ( String[] args )
 	{
-		Prime test = new Prime(24);
+		Prime test = new Prime(91);
 		test.isPrime();
 		out.println(test);
 		

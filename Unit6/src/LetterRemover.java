@@ -29,22 +29,23 @@ public class LetterRemover
 		lookFor = rem;
 	}
 
-	public void removeLetters()
+	public String removeLetters()
 	{
 		String cleaned = sentence;
 		int i = 0;
-		while (i < sentence.length()) {
+		while (i < cleaned.length()) {
 			if (cleaned.charAt(i) == lookFor) {
 				cleaned = cleaned.substring(0,i) + cleaned.substring(i+1);
-			i = i + 1;
+			}
+			else {
+				i++;
 			}
 		}
-		
-		System.out.print ("HI");
-	}}
-/*
+		return cleaned;
+	}
+
 	public String toString()
 	{
-		return sentence + " - letter to remove " + lookFor + "\nNew String: " + removeLetters();
+		return sentence + " - Letter to remove: " + lookFor + "\nNew String: " + removeLetters();
 	}
-}*/
+}

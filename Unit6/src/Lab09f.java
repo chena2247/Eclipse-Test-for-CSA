@@ -12,7 +12,18 @@ public class Lab09f
 	{
 		LetterRemover test = new LetterRemover("I am Sam I am", 'a');
 		test.removeLetters();
-		//System.out.println(test);
-		out.println("hi");
+		System.out.println(test);
+		
+		test.setRemover("ssssssssxssssesssssesss", 's');
+		System.out.println(test);
+		
+		test.setRemover("qwertyqwertyqwerty", 'a');
+		System.out.println(test);
+		
+		test.setRemover("abababababa", 'b');
+		System.out.println(test);
+		
+		test.setRemover("abababababa", 'x');
+		System.out.println(test);
 	}
 }
