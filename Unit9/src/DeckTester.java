@@ -8,7 +8,7 @@ public class DeckTester {
 	 *	@param args is not used.
 	 */
 	public static void main(String[] args) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		/* ACTIVITY 2 CODE::
 		String[] rank = {"A", "B", "C"};
 		String[] suit = {"Giraffes", "Lions"};
 		int[] pointValue = {2,1,6};
@@ -33,9 +33,21 @@ public class DeckTester {
 		suit = new String[] {"hearts", "spades", "clubs"};
 		pointValue = new int[] {11, 12, 13, 1, 2};
 
-		Deck third = new Deck(ranks, suits, pointValues);
-		for (int i=0; i<ranks.length*suits.length;i++) {
+		Deck third = new Deck(rank, suit, pointValue);
+		for (int i=0; i<rank.length*suit.length;i++) {
 			System.out.println(third.deal());
+		}*/
+		
+		//ACTIVITY 4 CODE::
+		String[] rank = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9",
+							"10", "Jack", "Queen", "King"};
+		String[] suit = {"Hearts", "Spades", "Clubs", "Diamonds"};
+		int[] pointValue = {1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14};
+		
+		Deck full = new Deck(rank, suit, pointValue);
+		for (int i=0; i<rank.length*suit.length;i++) {
+			System.out.println(full.deal());
+			System.out.println(full);
 		}
 		
 	}

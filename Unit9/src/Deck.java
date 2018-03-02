@@ -12,6 +12,7 @@ public class Deck {
 	 * cards contains all the cards in the deck.
 	 */
 	private Card[] cards;
+	private Card holder;
 	
 	/**
 	 * size is the number of not-yet-dealt cards.
@@ -39,7 +40,7 @@ public class Deck {
 			}
 		}
 		size = cards.length;
-		shuffle();
+		shuffle(cards);
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 	}
 
@@ -68,8 +69,21 @@ public class Deck {
 	 * Randomly permute the given collection of cards
 	 * and reset the size to represent the entire deck.
 	 */
-	public void shuffle() {
+	public void shuffle(Card[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		int random =0;
+		Card[] shuffled = values;
+		for (int k=values.length-1; k>=0; k--) {
+			random = (int)(Math.random()*(values.length-1));
+			/*for (int i=0; i<3;i++) {
+				holder[i] = shuffled[k];
+			}*/
+			holder = shuffled[k];
+			shuffled[k] = shuffled[random];
+			shuffled[random] = holder;
+		}
+		size = cards.length;
+	
 	}
 
 	/**
@@ -92,26 +106,26 @@ public class Deck {
 	 */
 	@Override
 	public String toString() {
-		String rtn = "size = " + size + "\nUndealt cards: \n";
+		String rtn = "Size = " + size + "\nUndealt cards: \n";
 
 		for (int k = size - 1; k >= 0; k--) {
-			rtn = rtn + cards.get(k);
+			rtn = rtn + cards[k];
 			if (k != 0) {
 				rtn = rtn + ", ";
 			}
-			if ((size - k) % 2 == 0) {
+			else if ((size - k) % 2 == 0) {
 				// Insert carriage returns so entire deck is visible on console.
 				rtn = rtn + "\n";
 			}
 		}
 
 		rtn = rtn + "\nDealt cards: \n";
-		for (int k = cards.size() - 1; k >= size; k--) {
-			rtn = rtn + cards.get(k);
+		for (int k = size() - 1; k >= size; k--) {
+			rtn = rtn + cards[k];
 			if (k != size) {
 				rtn = rtn + ", ";
 			}
-			if ((k - cards.size()) % 2 == 0) {
+			if ((k - size()) % 2 == 0) {
 				// Insert carriage returns so entire deck is visible on console.
 				rtn = rtn + "\n";
 			}
