@@ -1,6 +1,7 @@
 /**
  * This is a class that tests the Deck class.
  */
+import java.util.ArrayList;
 public class DeckTester {
 
 	/**
@@ -32,20 +33,41 @@ public class DeckTester {
 		rank = new String[] {"jack", "queen", "king", "ace", "2"};
 		suit = new String[] {"hearts", "spades", "clubs"};
 		pointValue = new int[] {11, 12, 13, 1, 2};
-
+		
 		Deck third = new Deck(rank, suit, pointValue);
 		for (int i=0; i<rank.length*suit.length;i++) {
 			System.out.println(third.deal());
 		}*/
 		
 		//ACTIVITY 4 CODE::
-		String[] rank = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9",
-							"10", "Jack", "Queen", "King"};
-		String[] suit = {"Hearts", "Spades", "Clubs", "Diamonds"};
-		int[] pointValue = {1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14};
+		ArrayList<String> rank;
+		rank = new ArrayList<String>();
+		rank.add("Ace");
+		rank.add("One");
+		rank.add("Two");
+		rank.add("Three");
+		rank.add("Four");
+		rank.add("King");
+		rank.add("Queen");
+
+		ArrayList<String> suit;
+		suit = new ArrayList<String>();
+		suit.add("Hearts");
+		suit.add("Spades");
+		suit.add("Clubs");
+		suit.add("Diamonds");
+
+		ArrayList<Integer> pointValue;
+		pointValue = new ArrayList<Integer>();
+		pointValue.add(1);
+		pointValue.add(2);
+		pointValue.add(3);
+		pointValue.add(4);
+		pointValue.add(13);
+		pointValue.add(12);
 		
 		Deck full = new Deck(rank, suit, pointValue);
-		for (int i=0; i<rank.length*suit.length;i++) {
+		for (int i=0; i<rank.size()*suit.size();i++) {
 			System.out.println(full.deal());
 			System.out.println(full);
 		}

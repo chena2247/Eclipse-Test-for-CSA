@@ -11,7 +11,10 @@ public class Deck {
 	/**
 	 * cards contains all the cards in the deck.
 	 */
-	private Card[] cards;
+	//private Card[] cards;
+	//private Card holder;
+	
+	private ArrayList<Card> cards;
 	private Card holder;
 	
 	/**
@@ -30,16 +33,26 @@ public class Deck {
 	 * @param suits is an array containing all of the card suits.
 	 * @param values is an array containing all of the card point values.
 	 */
-	public Deck(String[] ranks, String[] suits, int[] values) {
-		cards = new Card[(suits.length*values.length)];
+	public Deck(ArrayList<String> ranks, ArrayList<String> suits, ArrayList<Integer> values) {
+		int counter = 0;
+		ArrayList<Card> single;
+		for (int i=0; i<suits.size(); i++) {
+			for (int a=0; a<ranks.size(); a++) {
+				single.add(ranks.get(a), suits.get(i), values.get(a));
+				cards.add(single);
+				counter++;
+			}
+		}
+		
+		/*		cards = new Card[(suits.length*values.length)];
 		int counter = 0;
 		for (int i=0; i<suits.length;i++) {
 			for (int a=0; a<ranks.length; a++) {
 				cards[counter] = new Card(ranks[a], suits[i], values[a]);
 				counter++;
 			}
-		}
-		size = cards.length;
+		}*/
+		size = cards.size();
 		shuffle(cards);
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 	}
@@ -69,20 +82,20 @@ public class Deck {
 	 * Randomly permute the given collection of cards
 	 * and reset the size to represent the entire deck.
 	 */
-	public void shuffle(Card[] values) {
+	public void shuffle(ArrayList<Card> values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
 		int random =0;
-		Card[] shuffled = values;
-		for (int k=values.length-1; k>=0; k--) {
-			random = (int)(Math.random()*(values.length-1));
+		ArrayList<Card> shuffled = values;
+		for (int k=values.size()-1; k>=0; k--) {
+			random = (int)(Math.random()*(values.size()-1));
 			/*for (int i=0; i<3;i++) {
 				holder[i] = shuffled[k];
 			}*/
-			holder = shuffled[k];
-			shuffled[k] = shuffled[random];
-			shuffled[random] = holder;
+			holder = shuffled.get(k);
+			shuffled.set(k, shuffled.get(random));
+			shuffled.set(random, holder);
 		}
-		size = cards.length;
+		size = cards.size();
 	
 	}
 
@@ -95,7 +108,7 @@ public class Deck {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 		while (size>0) {
 			size--;
-			return cards[size];
+			return cards.get(size);
 		}
 		return null;
 	}
@@ -109,7 +122,7 @@ public class Deck {
 		String rtn = "Size = " + size + "\nUndealt cards: \n";
 
 		for (int k = size - 1; k >= 0; k--) {
-			rtn = rtn + cards[k];
+			rtn = rtn + cards.get(k);
 			if (k != 0) {
 				rtn = rtn + ", ";
 			}
@@ -121,7 +134,7 @@ public class Deck {
 
 		rtn = rtn + "\nDealt cards: \n";
 		for (int k = size() - 1; k >= size; k--) {
-			rtn = rtn + cards[k];
+			rtn = rtn + cards.get(k);
 			if (k != size) {
 				rtn = rtn + ", ";
 			}
