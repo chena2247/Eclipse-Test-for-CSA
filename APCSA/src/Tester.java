@@ -1,7 +1,13 @@
 import java.math.*;
  
 class Tester {
-     
+	public static void main (String[] args) {
+	String x = "Chuck";
+	String y = "Chuck"; 
+	x = "Hi";
+	System.out.println(y);
+	}
+     /*
     // Function to calculate sum of all proper
     // divisors num --> given natural number
     static int divSum(int num)
@@ -33,6 +39,5 @@ class Tester {
     {
         int num = 48;
         System.out.println(divSum(num)+num);
-    }
+    } */
 }
- 
