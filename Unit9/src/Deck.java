@@ -38,8 +38,8 @@ public class Deck {
 		ArrayList<Card> single;
 		for (int i=0; i<suits.size(); i++) {
 			for (int a=0; a<ranks.size(); a++) {
-				single.add(ranks.get(a), suits.get(i), values.get(a));
-				cards.add(single);
+				//single.add(ranks.get(a), suits.get(i), values.get(a));
+				//cards.add(single);
 				counter++;
 			}
 		}
