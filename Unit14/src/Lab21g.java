@@ -24,6 +24,7 @@ public class Lab21g
 		System.out.println(test);
 		
 		AtCounter testTwo = new AtCounter();
+		testTwo.makeCopy();
 		testTwo.countAts(0, 0);
 		System.out.println(testTwo);
 	}

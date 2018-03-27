@@ -20,12 +20,11 @@ public class Lab21i
 			String line = file.nextLine();
 			Maze test = new Maze(size, file.nextLine());
 			//System.out.println(test);
+			System.out.println(test);
 			if (test.hasExitPath(0, 0) == true) 
 				System.out.println("exit found");
 			else 
 				System.out.println("exit not found");
-			System.out.println(test.hasExitPath(0, 0));
-			System.out.println(test);
 
 		}
 

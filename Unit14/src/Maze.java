@@ -31,17 +31,33 @@ public class Maze
 
 	public boolean hasExitPath(int r, int c)
 	{
-		if ((r>=0 && r<maze.length) && (c>=0 && c<maze.length) && maze[r][c] == 1) {
-			maze[r][c] = 2;
-			if (c==maze.length-1) 
+		if ((r>=0 && r<maze.length) && (c>=0 && c<maze.length)){
+			if (c==maze.length-1 && maze[r][c] == 1) {
 				return true;
-			else {
-				hasExitPath(r+1, c);
-				hasExitPath(r, c+1);
-				hasExitPath(r-1, c);
-				hasExitPath(r, c-1);
 			}
+			
+			if( maze[r][c] == 0) 
+			   return false;
+			
+			if (maze[r][c] == 2)
+				return false;
+			
+			if (maze[r][c] == 1) {
+				maze[r][c] = 2;
+				if (hasExitPath(r+1, c) || hasExitPath(r, c+1) || hasExitPath(r-1, c) || hasExitPath(r, c-1))
+					return true;
+				
+			}
+			/*
+			maze[r][c] = 2;
+			if (c==maze.length-1 && maze[r][c] == 1) {
+				return true;
+			}
+			else {
+				if (hasExitPath(r+1, c) || hasExitPath(r, c+1) || hasExitPath(r-1, c) || hasExitPath(r, c-1))
+						return true;*/
 		}
+		
 		return false;
 	}
 
@@ -54,6 +70,6 @@ public class Maze
 					output = output + maze[i][j] + " ";
 		}
 	
-		return output;
+		return output + "\n\n";
 	}
 }
