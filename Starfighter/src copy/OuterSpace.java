@@ -15,7 +15,6 @@ import static java.lang.Character.*;
 import java.awt.image.BufferedImage;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.math.*;
 
 public class OuterSpace extends Canvas implements KeyListener, Runnable
 {
@@ -27,8 +26,8 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 	//uncomment once you are ready for this part
 	 
 	private AlienHorde horde;
+   
 	private Bullets shots;
-	private Powers power;
 
 	private boolean[] keys;
 	private BufferedImage back;
@@ -46,7 +45,6 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		//alienTwo = new Alien(300,40,50,50,2);
 		shots = new Bullets();
 		horde = new AlienHorde(75);
-		power = new Powers();
 
 		this.addKeyListener(this);
 		new Thread(this).start();
@@ -109,8 +107,8 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 			ship.setY(0);
 		if(ship.getY() > 520)
 			ship.setY(520); 
-		
-		
+
+
 
 		twoDGraph.drawImage(back, null, 0, 0);
 		ship.draw(twoDGraph);
@@ -118,14 +116,11 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		//alienTwo.draw(twoDGraph);
 		shots.drawEmAll(twoDGraph);
 		horde.drawEmAll(twoDGraph);
-		power.drawEmAll(twoDGraph);
 		
 		//add in collision detection to see if Bullets hit the Aliens and if Bullets hit the Ship
 		shots.moveEmAll();
 		horde.moveEmAll();
 		horde.removeDeadOnes(shots.getList());
-		power.moveEmAll();
-		power.ifHit(ship);
 
 	}
 
@@ -177,10 +172,6 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		{
 			keys[4] = false;
 			shots.add(new Ammo(ship.getX() + 20, ship.getY() + ship.getSpeed()));
-
-			if ((int)(Math.random()*20) == 1) {
-				power.add(new PowerUp((int)(Math.random()*600),0,3));
-			}
 
 		}
 		repaint();
