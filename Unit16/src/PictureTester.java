@@ -157,7 +157,7 @@ public class PictureTester
 	  {
 	       Picture redMoto = new Picture("redMotorcycle.jpg");
 	       redMoto.explore();
-	       redMoto.sharpen(x,y,w,h); 
+	       redMoto.sharpen(x,y,w,h);
 	       redMoto.explore();
 	  }
 
@@ -169,7 +169,7 @@ public class PictureTester
     // and comment out the ones you don't want
     // to run
     //testZeroBlue();
-    testKeepOnlyBlue();
+    //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
     //testNegate();
@@ -181,12 +181,12 @@ public class PictureTester
 	//testMirrorHorizontalBotToTop();
 	//testMirrorTemple();
     //testMirrorArms();
-    testMirrorGull();
+    //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
 	//testMyCollage();
-    testEdgeDetection();
+    //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
@@ -194,7 +194,7 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
-	//testSharpen(50,50,500,400); 
+	testSharpen(50,50,500,400); 
 
   }
 }

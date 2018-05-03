@@ -557,8 +557,8 @@ public class Picture extends SimplePicture
 		  		  int bDifference = Math.abs(pixel1.getBlue()-pixel2.getBlue())/2;
 		  		  int rDifference = Math.abs(pixel1.getRed()-pixel2.getRed())/2;
 		  		  int gDifference = Math.abs(pixel1.getGreen()-pixel2.getGreen())/2;
-		  		  
-		  		  if ((bDifference + pixel1.getBlue()) > 255)
+		  		  		  		  
+		  		  if ((bDifference + pixel1.getBlue()) > 255) 
 		  			  result.setBlue(255);
 		  		  else 
 		  			  result.setBlue(bDifference + pixel1.getBlue());

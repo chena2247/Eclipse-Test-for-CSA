@@ -178,7 +178,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 			keys[4] = false;
 			shots.add(new Ammo(ship.getX() + 20, ship.getY() + ship.getSpeed()));
 
-			if ((int)(Math.random()*20) == 1) {
+			if ((int)(Math.random()*15) == 1) {
 				power.add(new PowerUp((int)(Math.random()*600),0,3));
 			}
 
