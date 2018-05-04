@@ -10,6 +10,11 @@ public class Powers {
 	
 	private List<PowerUp> power;
 	
+	/**
+	 * Initialize the PowerUp list.
+	 * @param Powers is a PowerUp subclass.
+	 */
+	
 	public Powers() { 
 		power = new ArrayList<PowerUp>();
 	}
@@ -18,6 +23,9 @@ public class Powers {
 		power.add(pow);
 	}
 	
+	/**
+	 * Moves all bullets down
+	 */
 	public void drawEmAll(Graphics window) {
 		window.setColor(Color.RED);
 		for (int i=0; i<power.size(); i++) {
@@ -32,6 +40,11 @@ public class Powers {
 		}
 	}
 	
+	/**
+	 * Tests whether ship hits or catches bullet
+	 * 
+	 * @param ship is the current ship
+	 */
 	public void ifHit(Ship ship) {
 		for (int i=0; i<power.size(); i++) {
 			if ((power.get(i).getX()<=ship.getX()+ship.getWidth()

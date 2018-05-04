@@ -25,7 +25,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 	//private Ammo ammoOne;
 
 	//uncomment once you are ready for this part
-	 
+	
 	private AlienHorde horde;
 	private Bullets shots;
 	private Powers power;
