@@ -160,6 +160,17 @@ public class PictureTester
 	       redMoto.sharpen(x,y,w,h);
 	       redMoto.explore();
 	  }
+	  
+	  public static void testEncodeDecode() {
+		  Picture beach = new Picture("beach.jpg");
+		  Picture coderpic = new Picture("crybytes-apple_icon.jpg");
+		  //Picture coderpic = new Picture("msg.jpg");
+		  beach.explore();
+		  beach.encode(coderpic);
+		  beach.decode().explore();
+		  
+	  }
+	  
 
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -194,7 +205,7 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
-	testSharpen(50,50,500,400); 
-
+	//testSharpen(50,50,500,400); 
+	  testEncodeDecode();
   }
 }

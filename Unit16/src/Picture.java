@@ -573,9 +573,61 @@ public class Picture extends SimplePicture
 		  		  else
 		  			  result.setGreen(gDifference + pixel1.getGreen());
 	  		  }
-	  		  
 	  	  }
-	  }
+	  	  }
+	  	  
+	  	public void encode(Picture pic) 
+	  	{
+
+	  	Pixel[][] messagePixels = pic.getPixels2D();
+	  	Pixel[][] currPixels = this.getPixels2D();
+	  	Pixel currPixel = null;
+	  	Pixel messagePixel = null;
+	  	int count = 0;
+	  	
+	  	for (int row = 0; row < this.getHeight(); row++) {
+	  		for (int col = 0; col < this.getWidth(); col++) {
+	  			// if the current pixel red is odd make it even
+	  			currPixel = currPixels[row][col];
+	  			if (currPixel.getBlue() % 5 == 0) {
+	  				if (currPixel.getBlue() < 255)
+	  				currPixel.setBlue(currPixel.getBlue() + 1);
+	  			}
+	  			messagePixel = messagePixels[row][col];
+	  			if (messagePixel.colorDistance(Color.BLACK) < 50) {
+	  				int remainder = currPixel.getBlue() % 5;
+	  				currPixel.setBlue(currPixel.getBlue() - remainder);
+	  				count++;
+	  				}
+	  			}
+	  		}
+	  	System.out.println(count);
+	  	}
+	  	
+	  	public Picture decode() {
+	  		Pixel[][] pixels = this.getPixels2D();
+	  		int height = this.getHeight();
+		  	int width = this.getWidth();
+		  	Pixel currPixel = null;
+	
+		  	Pixel messagePixel = null;
+		  	Picture messagePicture = new Picture(height,width);
+		  	Pixel[][] messagePixels = messagePicture.getPixels2D();
+		  	int count = 0;
+		  	for (int row = 0; row < this.getHeight(); row++) {
+		  		for (int col = 0; col < this.getWidth(); col++) {
+		  			currPixel = pixels[row][col];
+			  	messagePixel = messagePixels[row][col];
+			  	if (currPixel.getBlue() % 5 == 0) {
+			  		messagePixel.setColor(Color.BLACK);
+			  		count++;
+			  		}
+			  	}
+		  	}
+		  	System.out.println(count);
+		  	return messagePicture;
+	  	}
+	  
 	  
 
   /* Main method for testing - each class in Java can have a main 
