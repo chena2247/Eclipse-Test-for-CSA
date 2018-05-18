@@ -167,6 +167,8 @@ public class PictureTester
 		  //Picture coderpic = new Picture("msg.jpg");
 		  beach.explore();
 		  beach.encode(coderpic);
+		  beach.explore();
+
 		  beach.decode().explore();
 		  
 	  }
