@@ -587,14 +587,14 @@ public class Picture extends SimplePicture
 	  	
 	  	for (int row = 0; row < this.getHeight(); row++) {
 	  		for (int col = 0; col < this.getWidth(); col++) {
-	  			// if the current pixel red is odd make it even
+	  			// if the current blue pixel mod 5 = 0 make it not divisible by 5
 	  			currPixel = currPixels[row][col];
 	  			if (currPixel.getBlue() % 5 == 0) {
 	  				if (currPixel.getBlue() < 255)
 	  				currPixel.setBlue(currPixel.getBlue() + 1);
 	  			}
 	  			messagePixel = messagePixels[row][col];
-	  			if (messagePixel.colorDistance(Color.BLACK) < 50) {
+	  			if (messagePixel.colorDistance(Color.BLACK) < 100) {
 	  				int remainder = currPixel.getBlue() % 5;
 	  				currPixel.setBlue(currPixel.getBlue() - remainder);
 	  				count++;
